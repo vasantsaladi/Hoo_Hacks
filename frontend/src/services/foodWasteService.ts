@@ -4,7 +4,7 @@
  */
 
 // API base URL - change this to match your backend URL
-const API_BASE_URL = 'http://localhost:8001/api/v1';
+const API_BASE_URL = 'http://localhost:8000/api/v1';
 
 // Prediction request interface matching the backend schema
 export interface PredictionRequest {
@@ -33,6 +33,8 @@ export interface PredictionResponse {
  */
 export async function getPrediction(data: PredictionRequest): Promise<PredictionResponse> {
   try {
+    console.log('Sending prediction request:', data);
+    
     const response = await fetch(`${API_BASE_URL}/predict`, {
       method: 'POST',
       headers: {
@@ -42,13 +44,29 @@ export async function getPrediction(data: PredictionRequest): Promise<Prediction
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.detail || 'Failed to get prediction');
+      // Try to get error details from response
+      let errorMessage = 'Failed to get prediction';
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.detail || errorMessage;
+      } catch (e) {
+        // If parsing fails, use status text
+        errorMessage = `${response.status}: ${response.statusText}`;
+      }
+      
+      console.error('Prediction API error:', errorMessage);
+      throw new Error(errorMessage);
     }
 
-    return await response.json();
+    const result = await response.json();
+    console.log('Received prediction response:', result);
+    return result;
   } catch (error) {
     console.error('Error fetching prediction:', error);
+    // If the error is due to connection issues, provide a clearer message
+    if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+      throw new Error('Could not connect to the prediction server. Please check if the backend is running.');
+    }
     throw error;
   }
 }
@@ -62,7 +80,7 @@ export async function checkApiHealth(): Promise<{ status: string }> {
     const response = await fetch(`${API_BASE_URL}/health`);
     
     if (!response.ok) {
-      throw new Error('API health check failed');
+      throw new Error(`API health check failed: ${response.status} ${response.statusText}`);
     }
 
     return await response.json();
