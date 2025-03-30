@@ -18,7 +18,6 @@ Food Waste Predictor is a data science solution designed to help restaurants and
 ### 📈 Data Visualization & Analytics
 
 - **CO2 Emissions Tracking**: Quantitative analysis of environmental impact
-- **Water Footprint Analysis**: Statistical breakdown of water usage categories
 - **Seasonal Waste Pattern Analysis**: Time-series forecasting of waste patterns
 - **Utilization Rate Metrics**: Statistical correlation between utilization and waste
 
@@ -106,11 +105,5 @@ Food Waste Predictor is a data science solution designed to help restaurants and
 - **Data-Driven Savings**: Statistical model projects average ROI of 280% in the first year
 - **Environmental Impact**: Quantitative analysis shows potential to reduce CO2 emissions by up to 2.5kg per kg of food saved
 - **Operational Efficiency**: Data analysis indicates payback period of approximately 3 months for implementation costs
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
 
 _Food Waste Predictor - Data-driven solutions for food waste reduction._
