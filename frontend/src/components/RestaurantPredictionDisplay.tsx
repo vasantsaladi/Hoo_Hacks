@@ -5,6 +5,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
   PieChart, Pie, Cell
 } from 'recharts';
+import AdvancedDataScienceCharts from './AdvancedDataScienceCharts';
 
 interface RestaurantPredictionDisplayProps {
   predictionData: {
@@ -116,58 +117,7 @@ export default function RestaurantPredictionDisplay({ predictionData }: Restaura
       <div className="p-4">
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            {/* Financial Impact Highlight */}
-            <div className="bg-white p-4 rounded-lg border border-gray-200 mb-6">
-              <h3 className="text-lg font-medium text-gray-800 mb-2">Financial Impact</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-3 rounded border border-gray-200">
-                  <p className="text-sm text-gray-500">Current Waste Cost</p>
-                  <p className="text-2xl font-bold text-red-500">${financialImpact.wastedCost}</p>
-                  <p className="text-xs text-gray-500">per week</p>
-                </div>
-                <div className="bg-white p-3 rounded border border-gray-200">
-                  <p className="text-sm text-gray-500">Potential Savings</p>
-                  <p className="text-2xl font-bold text-green-500">${financialImpact.potentialSavings}</p>
-                  <p className="text-xs text-gray-500">per week</p>
-                </div>
-                <div className="bg-white p-3 rounded border border-gray-200">
-                  <p className="text-sm text-gray-500">Annual Waste Cost</p>
-                  <p className="text-2xl font-bold text-red-500">${financialImpact.annualWaste}</p>
-                  <p className="text-xs text-gray-500">projected</p>
-                </div>
-                <div className="bg-white p-3 rounded border border-gray-200">
-                  <p className="text-sm text-gray-500">Annual Savings</p>
-                  <p className="text-2xl font-bold text-green-500">${financialImpact.annualSavings}</p>
-                  <p className="text-xs text-gray-500">projected</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Food Utilization Chart */}
-            <div className="bg-white p-4 rounded-lg border border-gray-200">
-              <h3 className="text-lg font-medium text-gray-800 mb-2">Food Utilization vs. Waste</h3>
-              <p className="text-sm text-gray-500 mb-4">Utilization Rate: {predictionData.utilization_rate}%</p>
-              <div className="h-64 bg-white">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={utilizationData}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip formatter={(value) => [`${value} kg`, 'Amount']} />
-                    <Bar dataKey="value" name="Amount (kg)">
-                      {utilizationData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-
-            {/* Key Metrics */}
+            {/* Key Metrics and CO2 Emissions - Moved to top */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-4 rounded-lg border border-gray-200">
                 <h3 className="text-lg font-medium text-gray-800 mb-4">Key Metrics</h3>
@@ -194,11 +144,10 @@ export default function RestaurantPredictionDisplay({ predictionData }: Restaura
                   </div>
                 </div>
               </div>
-
-              {/* CO2 Emissions Impact */}
+              
               <div className="bg-white p-4 rounded-lg border border-gray-200">
                 <h3 className="text-lg font-medium text-gray-800 mb-2">CO2 Emissions Impact</h3>
-                <div className="h-64 bg-white">
+                <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                       <Pie
@@ -226,9 +175,33 @@ export default function RestaurantPredictionDisplay({ predictionData }: Restaura
                 </div>
               </div>
             </div>
+
+            {/* Food Utilization Chart */}
+            <div className="bg-white p-4 rounded-lg border border-gray-200">
+              <h3 className="text-lg font-medium text-gray-800 mb-2">Food Utilization vs. Waste</h3>
+              <p className="text-sm text-gray-500 mb-4">Utilization Rate: {predictionData.utilization_rate}%</p>
+              <div className="h-64 bg-white">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={utilizationData}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip formatter={(value) => [`${value} kg`, 'Amount']} />
+                    <Bar dataKey="value" name="Amount (kg)">
+                      {utilizationData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
         )}
-
+        
         {activeTab === 'recommendations' && (
           <div className="space-y-4">
             <h3 className="text-lg font-medium text-gray-800 mb-4">Recommended Actions</h3>
@@ -258,90 +231,108 @@ export default function RestaurantPredictionDisplay({ predictionData }: Restaura
             </div>
           </div>
         )}
-
+        
         {activeTab === 'analytics' && (
           <div className="space-y-6">
-            <h3 className="text-lg font-medium text-gray-800 mb-4">Detailed Financial Analysis</h3>
-            
-            {/* Financial Impact Chart */}
-            <div className="bg-white p-4 rounded-lg border border-gray-200">
-              <h4 className="font-medium text-gray-700 mb-2">Weekly Financial Impact</h4>
-              <div className="h-64 bg-white">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={financialData}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip formatter={(value) => [`$${value}`, 'Amount']} />
-                    <Bar dataKey="value" name="Amount ($)">
-                      {financialData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-            
-            {/* Improvement Potential */}
-            <div className="bg-white p-4 rounded-lg border border-gray-200">
-              <h4 className="font-medium text-gray-700 mb-4">Improvement Potential</h4>
-              
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm text-gray-600">Current Waste Cost</span>
-                    <span className="text-sm text-gray-600">Target (-30%)</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5 bg-white">
-                    <div className="bg-red-500 h-2.5 rounded-full" style={{ width: '100%' }}></div>
-                  </div>
-                  <div className="flex justify-between mt-1">
-                    <span className="text-sm font-medium text-red-500">${financialImpact.wastedCost}</span>
-                    <span className="text-sm font-medium text-green-500">${(financialImpact.wastedCost * 0.7).toFixed(2)}</span>
-                  </div>
+            {/* Financial Impact - Moved from Overview to Detailed Analytics */}
+            <div className="bg-white p-4 rounded-lg border border-gray-200 mb-6">
+              <h3 className="text-lg font-medium text-gray-800 mb-2">Financial Impact</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <p className="text-sm text-gray-500">Current Waste Cost</p>
+                  <p className="text-2xl font-bold text-red-500">${financialImpact.wastedCost}</p>
+                  <p className="text-xs text-gray-500">per week</p>
                 </div>
-                
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm text-gray-600">Current Annual Cost</span>
-                    <span className="text-sm text-gray-600">Target (-30%)</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5 bg-white">
-                    <div className="bg-red-500 h-2.5 rounded-full" style={{ width: '100%' }}></div>
-                  </div>
-                  <div className="flex justify-between mt-1">
-                    <span className="text-sm font-medium text-red-500">${financialImpact.annualWaste}</span>
-                    <span className="text-sm font-medium text-green-500">${(financialImpact.annualWaste * 0.7).toFixed(2)}</span>
-                  </div>
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <p className="text-sm text-gray-500">Potential Savings</p>
+                  <p className="text-2xl font-bold text-green-500">${financialImpact.potentialSavings}</p>
+                  <p className="text-xs text-gray-500">per week</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <p className="text-sm text-gray-500">Annual Waste Cost</p>
+                  <p className="text-2xl font-bold text-red-500">${financialImpact.annualWaste}</p>
+                  <p className="text-xs text-gray-500">projected</p>
+                </div>
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <p className="text-sm text-gray-500">Annual Savings</p>
+                  <p className="text-2xl font-bold text-green-500">${financialImpact.annualSavings}</p>
+                  <p className="text-xs text-gray-500">projected</p>
                 </div>
               </div>
             </div>
-            
-            {/* ROI Analysis */}
+
+            {/* Advanced Data Science Charts */}
+            <AdvancedDataScienceCharts predictionData={predictionData} />
+
             <div className="bg-white p-4 rounded-lg border border-gray-200">
-              <h4 className="font-medium text-gray-700 mb-4">Return on Investment Analysis</h4>
+              <h3 className="text-lg font-medium text-gray-800 mb-4">Detailed Financial Analysis</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-3 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">5-Year Savings</p>
-                  <p className="text-xl font-bold text-green-500">${(financialImpact.annualSavings * 5).toFixed(2)}</p>
-                </div>
-                <div className="p-3 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">Average Monthly Savings</p>
-                  <p className="text-xl font-bold text-green-500">${(financialImpact.annualSavings / 12).toFixed(2)}</p>
-                </div>
-                <div className="p-3 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-500">Payback Period</p>
-                  <p className="text-xl font-bold text-gray-700">~3 months</p>
+              <div className="mb-8">
+                <h4 className="text-md font-medium text-gray-700 mb-2">Weekly Financial Impact</h4>
+                <div className="h-64 bg-white">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={financialData}
+                      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip formatter={(value) => [`$${value}`, 'Amount']} />
+                      <Bar dataKey="value" name="Amount ($)">
+                        {financialData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
                 </div>
               </div>
               
-              <div className="mt-4 p-3 bg-green-50 rounded-lg border border-green-100">
-                <p className="text-sm text-green-800">
+              <div className="mt-6">
+                <h4 className="text-md font-medium text-gray-700 mb-2">Improvement Potential</h4>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-gray-600">Current Waste Cost</p>
+                      <p className="text-xl font-bold text-red-500">${financialImpact.wastedCost}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-gray-600">Target (-30%)</p>
+                      <p className="text-xl font-bold text-green-500">${(financialImpact.wastedCost * 0.7).toFixed(2)}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-gray-600">Current Annual Cost</p>
+                      <p className="text-xl font-bold text-red-500">${financialImpact.annualWaste}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-gray-600">Target (-30%)</p>
+                      <p className="text-xl font-bold text-green-500">${(financialImpact.annualWaste * 0.7).toFixed(2)}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
+                <h4 className="text-md font-medium text-green-800 mb-2">Return on Investment Analysis</h4>
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <p className="text-gray-600 text-sm">5-Year Savings</p>
+                    <p className="text-xl font-bold text-green-600">${(financialImpact.annualSavings * 5).toFixed(2)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-600 text-sm">Average Monthly Savings</p>
+                    <p className="text-xl font-bold text-green-600">${(financialImpact.annualSavings / 12).toFixed(2)}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-600 text-sm">Payback Period</p>
+                    <p className="text-xl font-bold text-blue-600">~3 months</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-green-800">
                   Implementing these recommendations could yield a 280% return on investment within the first year.
                 </p>
               </div>
