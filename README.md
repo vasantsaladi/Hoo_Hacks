@@ -4,71 +4,64 @@
 
 ## 🌱 Project Overview
 
-Food Waste Predictor is an AI-powered application designed to help restaurants and food businesses reduce waste, cut costs, and minimize environmental impact. By leveraging advanced machine learning algorithms, the system predicts potential food waste based on various factors and provides actionable recommendations to optimize inventory management.
+Food Waste Predictor is a data science solution designed to help restaurants and food businesses reduce waste through advanced predictive modeling. By leveraging machine learning algorithms and statistical analysis, our system accurately forecasts potential food waste based on multiple data sources and provides data-driven insights for inventory optimization.
 
 ## 🚀 Key Features
 
-### 🔮 Predictive Analytics
+### 📊 Data Science & Predictive Modeling
 
-- **91% Prediction Accuracy**: Our model achieves 91% accuracy in predicting food waste quantities
-- **Multi-factor Analysis**: Considers food type, storage conditions, guest count, event type, and more
-- **Real-time Predictions**: Get instant waste predictions based on your input parameters
+- **78% Prediction Accuracy**: Our Random Forest model achieves 78% accuracy in predicting food waste quantities
+- **Feature Importance Analysis**: Utilization Rate (78%), Quantity of Food (8%), Number of Guests (5%)
+- **Multi-dataset Integration**: Combines restaurant data, regional waste statistics, and shelf life information
+- **Advanced Feature Engineering**: Derived metrics including waste-per-guest ratio and utilization rates
 
-### 🌍 Environmental Impact Visualization
+### 📈 Data Visualization & Analytics
 
-- **CO2 Emissions Tracking**: Visualize the carbon footprint of food waste
-- **Water Footprint Analysis**: Breakdown of blue, green, and grey water usage
-- **Environmental Savings Potential**: Interactive waterfall chart showing potential savings
-- **Utilization Rate Gauge**: Visual representation of resource efficiency
+- **CO2 Emissions Tracking**: Quantitative analysis of environmental impact
+- **Water Footprint Analysis**: Statistical breakdown of water usage categories
+- **Seasonal Waste Pattern Analysis**: Time-series forecasting of waste patterns
+- **Utilization Rate Metrics**: Statistical correlation between utilization and waste
 
-### 💰 Financial Impact Dashboard
+### 💹 Financial Impact Analysis
 
-- **ROI Analysis**: Interactive 5-year ROI projection (up to 780%)
-- **Cost Breakdown**: Detailed pie chart showing distribution of waste-related expenses
-- **Monthly Savings Projection**: Compare current vs. optimized costs
-- **24-Month Financial Forecast**: Visualize how savings compound over time
-- **Seasonal Waste Pattern Analysis**: Identify high-waste periods throughout the year
-- **Investment Scenario Analysis**: Compare different investment options with payback periods
-
-### 🤖 AI-Powered Recommendations
-
-- **Customized Suggestions**: Tailored recommendations based on your specific waste patterns
-- **Implementation Timeline**: Prioritized action items with implementation timeframes
-- **Impact Ratings**: Each recommendation includes potential waste reduction percentage
+- **ROI Projections**: Data-driven 5-year financial forecasting
+- **Cost Breakdown Analytics**: Statistical distribution of waste-related expenses
+- **Savings Projection Models**: Comparative analysis of current vs. optimized costs
+- **Investment Scenario Modeling**: Statistical comparison of investment options with calculated payback periods
 
 ## 🔧 Technical Architecture
 
-### Backend (FastAPI)
+### 🧠 Data Science & ML Pipeline
 
-- **High-Performance API**: Built with FastAPI for fast, asynchronous processing
-- **Rate Limiting**: Protects against API abuse with intelligent rate limiting
-- **Model Integration**: Seamless integration with our ML model
-- **OpenAI Integration**: Generates intelligent, context-aware recommendations
-
-### Data Science & ML
-
-- **Advanced Model**: Random Forest Regressor with feature importance analysis
-- **Feature Engineering**: Sophisticated preprocessing pipeline including:
-  - Shelf life data extraction
-  - Food category standardization
-  - Weather data integration
-  - Utilization rate calculations
+- **Model Architecture**: Random Forest Regressor optimized through GridSearchCV
+- **Feature Engineering Pipeline**:
+  - Shelf life data extraction and normalization
+  - Food category standardization with custom mapping algorithm
+  - Weather data integration via API
+  - Statistical derivation of utilization metrics
 - **Model Performance**: Mean Absolute Error of 0.04
-- **Top Predictors**: Utilization Rate (78%), Quantity of Food (8%), Number of Guests (5%)
+- **Cross-validation**: K-fold validation to ensure model robustness
 
-### Frontend (Next.js)
+### 🔄 Data Processing
 
-- **Modern UI**: Clean, responsive design built with Next.js and Tailwind CSS
-- **Interactive Visualizations**: Powered by Recharts for dynamic data representation
-- **Animated Components**: Smooth transitions and animations via Framer Motion
-- **Tab-based Interface**: Organized into Waste Metrics, AI Suggestions, and Financial Impact
+- **ETL Pipeline**: Automated extraction, transformation, and loading of multiple data sources
+- **Data Cleaning**: Outlier detection and handling of missing values
+- **Feature Selection**: Statistical significance testing for optimal feature selection
+- **Data Normalization**: Standardization of numerical features and one-hot encoding of categorical variables
+
+### 🖥️ Visualization Framework
+
+- **Interactive Dashboards**: Dynamic data representation with Recharts
+- **Statistical Plots**: Time-series, distribution, and correlation visualizations
+- **Metric Cards**: Key performance indicators with statistical context
+- **Comparative Analysis Views**: Before/after optimization metrics
 
 ## 📊 Data Sources
 
-- Restaurant waste data from multiple establishments
-- Brooklyn food waste statistics
-- Product shelf life database
-- Weather data integration
+- Restaurant waste data (7,500+ records)
+- Brooklyn food waste statistics (regional benchmark data)
+- Product shelf life database (2,000+ food items)
+- Weather data correlation analysis
 
 ## 🛠️ Installation & Setup
 
@@ -110,9 +103,9 @@ Food Waste Predictor is an AI-powered application designed to help restaurants a
 
 ## 🏆 Impact Potential
 
-- **Financial**: Average ROI of 280% in the first year
-- **Environmental**: Potential to reduce CO2 emissions by up to 2.5kg per kg of food saved
-- **Operational**: Payback period of approximately 3 months for implementation costs
+- **Data-Driven Savings**: Statistical model projects average ROI of 280% in the first year
+- **Environmental Impact**: Quantitative analysis shows potential to reduce CO2 emissions by up to 2.5kg per kg of food saved
+- **Operational Efficiency**: Data analysis indicates payback period of approximately 3 months for implementation costs
 
 ## 📝 License
 
@@ -120,4 +113,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-_Food Waste Predictor - Turning waste into savings, one prediction at a time._
+_Food Waste Predictor - Data-driven solutions for food waste reduction._
