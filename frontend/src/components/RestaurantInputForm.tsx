@@ -10,6 +10,7 @@ import {
   estimateHistoricalSales
 } from '@/services/foodWasteService'
 import type { PredictionRequest, PredictionResponse } from '@/services/foodWasteService'
+import { FaLeaf, FaTemperatureHigh, FaTint, FaUtensils, FaUsers, FaWeight, FaSnowflake, FaChartBar } from 'react-icons/fa'
 
 interface InputFormProps {
   onPredictionsChange: (predictions: PredictionResponse | null) => void;
@@ -148,20 +149,20 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
   }
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold text-white mb-4">Restaurant Food Waste Predictor</h2>
+    <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+      <h2 className="text-xl font-semibold text-gray-800 mb-4">Restaurant Food Waste Predictor</h2>
       
       <form onSubmit={handleSubmit}>
         {/* Location */}
         <div className="mb-4">
-          <label htmlFor="location" className="block text-gray-300 mb-2">
+          <label htmlFor="location" className="block text-gray-700 mb-2">
             Restaurant Location
           </label>
           <select
             id="location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           >
             <option value="Charlottesville">Charlottesville</option>
             <option value="New York">New York</option>
@@ -173,8 +174,8 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
         
         {/* Temperature */}
         <div className="mb-4">
-          <label htmlFor="temperature" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">🌡️</span>
+          <label htmlFor="temperature" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaTemperatureHigh /></span>
             Current Temperature (°C)
           </label>
           <input
@@ -183,17 +184,17 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="temperature"
             value={formData.temperature}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           />
           {errors.temperature && (
-            <p className="text-red-400 text-sm mt-1">{errors.temperature}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.temperature}</p>
           )}
         </div>
         
         {/* Humidity */}
         <div className="mb-4">
-          <label htmlFor="humidity" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">💧</span>
+          <label htmlFor="humidity" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaTint /></span>
             Current Humidity (%)
           </label>
           <input
@@ -202,17 +203,17 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="humidity"
             value={formData.humidity}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           />
           {errors.humidity && (
-            <p className="text-red-400 text-sm mt-1">{errors.humidity}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.humidity}</p>
           )}
         </div>
         
         {/* Product Type */}
         <div className="mb-4">
-          <label htmlFor="product_type" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">🍴</span>
+          <label htmlFor="product_type" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaUtensils /></span>
             Food Type
           </label>
           <select
@@ -220,7 +221,7 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="product_type"
             value={formData.product_type}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           >
             <option value="vegetables">Vegetables</option>
             <option value="fruits">Fruits</option>
@@ -234,8 +235,8 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
         
         {/* Number of Guests */}
         <div className="mb-4">
-          <label htmlFor="number_of_guests" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">👥</span>
+          <label htmlFor="number_of_guests" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaUsers /></span>
             Number of Guests
           </label>
           <input
@@ -244,17 +245,17 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="number_of_guests"
             value={formData.number_of_guests}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           />
           {errors.number_of_guests && (
-            <p className="text-red-400 text-sm mt-1">{errors.number_of_guests}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.number_of_guests}</p>
           )}
         </div>
         
         {/* Quantity of Food */}
         <div className="mb-4">
-          <label htmlFor="quantity_of_food" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">⚖️</span>
+          <label htmlFor="quantity_of_food" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaWeight /></span>
             Quantity of Food (kg)
           </label>
           <input
@@ -263,17 +264,17 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="quantity_of_food"
             value={formData.quantity_of_food}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           />
           {errors.quantity_of_food && (
-            <p className="text-red-400 text-sm mt-1">{errors.quantity_of_food}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.quantity_of_food}</p>
           )}
         </div>
         
         {/* Storage Conditions */}
         <div className="mb-4">
-          <label htmlFor="storage_conditions" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">❄️</span>
+          <label htmlFor="storage_conditions" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaSnowflake /></span>
             Storage Conditions
           </label>
           <select
@@ -281,7 +282,7 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="storage_conditions"
             value={formData.storage_conditions}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           >
             <option value="Refrigerated">Refrigerated</option>
             <option value="Frozen">Frozen</option>
@@ -292,8 +293,8 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
         
         {/* Historical Sales */}
         <div className="mb-6">
-          <label htmlFor="historical_sales" className="block text-gray-300 mb-2 flex items-center">
-            <span className="mr-2 text-green-400">📊</span>
+          <label htmlFor="historical_sales" className="block text-gray-700 mb-2 flex items-center">
+            <span className="mr-2 text-green-500"><FaChartBar /></span>
             Historical Sales (kg)
           </label>
           <input
@@ -302,17 +303,17 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
             name="historical_sales"
             value={formData.historical_sales}
             onChange={handleChange}
-            className="w-full bg-gray-700 text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full bg-white border border-gray-300 text-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           />
           {errors.historical_sales && (
-            <p className="text-red-400 text-sm mt-1">{errors.historical_sales}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.historical_sales}</p>
           )}
         </div>
         
         {/* Submit Error */}
         {errors.submit && (
-          <div className="mb-4 p-3 bg-red-900/50 border border-red-500 rounded-md">
-            <p className="text-red-400 text-sm">{errors.submit}</p>
+          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-md">
+            <p className="text-sm">{errors.submit}</p>
           </div>
         )}
         
@@ -322,8 +323,8 @@ export default function RestaurantInputForm({ onPredictionsChange, onLoadingChan
           disabled={isLoading}
           className={`w-full py-2 px-4 rounded font-medium ${
             isLoading
-              ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
-              : 'bg-green-600 text-white hover:bg-green-700 transition-colors'
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              : 'bg-green-500 text-white hover:bg-green-600 transition-colors'
           }`}
         >
           {isLoading ? 'Predicting...' : 'Predict Food Waste'}

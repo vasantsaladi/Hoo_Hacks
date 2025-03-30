@@ -17,13 +17,28 @@ export interface PredictionRequest {
   storage_conditions?: string;
 }
 
+// Restaurant prediction request interface matching the backend schema
+export interface RestaurantPredictionRequest {
+  food_type: string;
+  number_of_guests: number;
+  event_type: string;
+  storage_condition: string;
+  preparation_method: string;
+  location: string;
+  pricing_tier: string;
+}
+
 // Prediction response interface matching the backend schema
 export interface PredictionResponse {
   prediction: number;
-  recommendations: string[];
   co2_saved: number;
-  food_type: string;
+  recommendations: string[];
   utilization_rate?: number;
+  food_type: string;
+  total_food: number;
+  waste_amount: number;
+  waste_percentage: number;
+  co2_emissions: number;
 }
 
 /**
@@ -60,9 +75,76 @@ export async function getPrediction(data: PredictionRequest): Promise<Prediction
 
     const result = await response.json();
     console.log('Received prediction response:', result);
-    return result;
+    
+    // Add derived fields for the updated UI
+    const totalFood = data.quantity_of_food || 400; // Default to 400kg if not provided
+    
+    return {
+      ...result,
+      food_type: data.product_type,
+      total_food: totalFood,
+      waste_amount: result.prediction,
+      waste_percentage: Math.round((result.prediction / totalFood) * 100),
+      co2_emissions: result.co2_saved
+    };
   } catch (error) {
     console.error('Error fetching prediction:', error);
+    // If the error is due to connection issues, provide a clearer message
+    if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+      throw new Error('Could not connect to the prediction server. Please check if the backend is running.');
+    }
+    throw error;
+  }
+}
+
+/**
+ * Get restaurant food waste prediction from the API
+ * @param data RestaurantPredictionRequest data
+ * @returns Promise with the prediction response
+ */
+export async function getRestaurantPrediction(data: RestaurantPredictionRequest): Promise<PredictionResponse> {
+  try {
+    console.log('Sending restaurant prediction request:', data);
+    
+    const response = await fetch(`${API_BASE_URL}/restaurant/predict`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      // Try to get error details from response
+      let errorMessage = 'Failed to get restaurant prediction';
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.detail || errorMessage;
+      } catch (e) {
+        // If parsing fails, use status text
+        errorMessage = `${response.status}: ${response.statusText}`;
+      }
+      
+      console.error('Restaurant prediction API error:', errorMessage);
+      throw new Error(errorMessage);
+    }
+
+    const result = await response.json();
+    console.log('Received restaurant prediction response:', result);
+    
+    // Add derived fields for the updated UI
+    const totalFood = 400; // Default to 400kg for restaurant predictions
+    
+    return {
+      ...result,
+      food_type: data.food_type,
+      total_food: totalFood,
+      waste_amount: result.prediction,
+      waste_percentage: Math.round((result.prediction / totalFood) * 100),
+      co2_emissions: result.co2_saved
+    };
+  } catch (error) {
+    console.error('Error fetching restaurant prediction:', error);
     // If the error is due to connection issues, provide a clearer message
     if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
       throw new Error('Could not connect to the prediction server. Please check if the backend is running.');

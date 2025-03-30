@@ -37,7 +37,7 @@ export default function RestaurantVisualizations({ prediction }: VisualizationsP
     const barWidth = width / 3
     
     // Draw title
-    ctx.fillStyle = '#FFFFFF'
+    ctx.fillStyle = '#000000'
     ctx.font = '14px Arial'
     ctx.textAlign = 'center'
     ctx.fillText('Food Utilization vs. Waste', canvas.width / 2, margin / 2)
@@ -75,7 +75,7 @@ export default function RestaurantVisualizations({ prediction }: VisualizationsP
     )
     
     // Draw labels
-    ctx.fillStyle = '#FFFFFF'
+    ctx.fillStyle = '#000000'
     ctx.textAlign = 'center'
     
     // Utilized food label
@@ -103,7 +103,7 @@ export default function RestaurantVisualizations({ prediction }: VisualizationsP
     )
     
     // Draw values on bars
-    ctx.fillStyle = '#FFFFFF'
+    ctx.fillStyle = '#000000'
     ctx.textAlign = 'center'
     
     // Utilized food value
@@ -122,7 +122,7 @@ export default function RestaurantVisualizations({ prediction }: VisualizationsP
     
     // Draw utilization rate if available
     if (prediction.utilization_rate) {
-      ctx.fillStyle = '#FFFFFF'
+      ctx.fillStyle = '#000000'
       ctx.font = 'bold 16px Arial'
       ctx.textAlign = 'center'
       ctx.fillText(
@@ -135,12 +135,12 @@ export default function RestaurantVisualizations({ prediction }: VisualizationsP
   
   return (
     <div className="mt-8">
-      <h2 className="text-xl font-semibold text-white mb-4 flex items-center">
-        <span className="text-green-400 mr-2">📈</span>
+      <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+        <span className="text-green-500 mr-2">📈</span>
         Food Waste Visualizations
       </h2>
       
-      <div className="bg-gray-800 p-6 rounded-lg shadow-md">
+      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Bar Chart */}
           <div className="flex-1">
@@ -148,72 +148,72 @@ export default function RestaurantVisualizations({ prediction }: VisualizationsP
               ref={canvasRef} 
               width={400} 
               height={300} 
-              className="w-full h-auto bg-gray-700 rounded-lg"
+              className="w-full h-auto bg-white rounded-lg border border-gray-200"
             ></canvas>
           </div>
           
           {/* Stats and Insights */}
           <div className="flex-1 space-y-4">
-            <h3 className="text-lg font-medium text-white">Key Insights</h3>
+            <h3 className="text-lg font-medium text-gray-800">Key Insights</h3>
             
-            <div className="bg-gray-700 p-4 rounded-lg">
-              <h4 className="text-gray-300 text-sm font-medium mb-2">Food Waste Metrics</h4>
+            <div className="bg-white p-4 rounded-lg border border-gray-200">
+              <h4 className="text-gray-700 text-sm font-medium mb-2">Food Waste Metrics</h4>
               <ul className="space-y-2">
                 <li className="flex justify-between">
-                  <span className="text-gray-400">Total Food:</span>
-                  <span className="text-white font-medium">
+                  <span className="text-gray-600">Total Food:</span>
+                  <span className="text-gray-800 font-medium">
                     {prediction.utilization_rate 
                       ? Math.round(prediction.prediction / (1 - prediction.utilization_rate)) 
                       : Math.round(prediction.prediction * 4)} kg
                   </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-gray-400">Waste Amount:</span>
-                  <span className="text-white font-medium">{prediction.prediction} kg</span>
+                  <span className="text-gray-600">Waste Amount:</span>
+                  <span className="text-gray-800 font-medium">{prediction.prediction} kg</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-gray-400">Waste Percentage:</span>
-                  <span className="text-white font-medium">
+                  <span className="text-gray-600">Waste Percentage:</span>
+                  <span className="text-gray-800 font-medium">
                     {prediction.utilization_rate 
                       ? Math.round((1 - prediction.utilization_rate) * 100) 
                       : Math.round((prediction.prediction / (prediction.prediction * 4)) * 100)}%
                   </span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-gray-400">CO2 Emissions:</span>
-                  <span className="text-white font-medium">{prediction.co2_saved} kg</span>
+                  <span className="text-gray-600">CO2 Emissions:</span>
+                  <span className="text-gray-800 font-medium">{prediction.co2_saved} kg</span>
                 </li>
               </ul>
             </div>
             
-            <div className="bg-gray-700 p-4 rounded-lg">
-              <h4 className="text-gray-300 text-sm font-medium mb-2">Improvement Potential</h4>
+            <div className="bg-white p-4 rounded-lg border border-gray-200">
+              <h4 className="text-gray-700 text-sm font-medium mb-2">Improvement Potential</h4>
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-gray-400 text-sm">Current Waste</span>
-                    <span className="text-gray-400 text-sm">Target (-30%)</span>
+                    <span className="text-gray-600 text-sm">Current Waste</span>
+                    <span className="text-gray-600 text-sm">Target (-30%)</span>
                   </div>
-                  <div className="w-full bg-gray-600 rounded-full h-3">
+                  <div className="w-full bg-gray-200 rounded-full h-3">
                     <div className="h-3 rounded-full bg-red-500" style={{ width: '100%' }}></div>
                   </div>
                   <div className="flex justify-between mt-1">
-                    <span className="text-white text-sm">{prediction.prediction} kg</span>
-                    <span className="text-green-400 text-sm">{Math.round(prediction.prediction * 0.7)} kg</span>
+                    <span className="text-gray-800 text-sm">{prediction.prediction} kg</span>
+                    <span className="text-green-500 text-sm">{Math.round(prediction.prediction * 0.7)} kg</span>
                   </div>
                 </div>
                 
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-gray-400 text-sm">Current CO2</span>
-                    <span className="text-gray-400 text-sm">Target (-30%)</span>
+                    <span className="text-gray-600 text-sm">Current CO2</span>
+                    <span className="text-gray-600 text-sm">Target (-30%)</span>
                   </div>
-                  <div className="w-full bg-gray-600 rounded-full h-3">
+                  <div className="w-full bg-gray-200 rounded-full h-3">
                     <div className="h-3 rounded-full bg-red-500" style={{ width: '100%' }}></div>
                   </div>
                   <div className="flex justify-between mt-1">
-                    <span className="text-white text-sm">{prediction.co2_saved} kg</span>
-                    <span className="text-green-400 text-sm">{Math.round(prediction.co2_saved * 0.7)} kg</span>
+                    <span className="text-gray-800 text-sm">{prediction.co2_saved} kg</span>
+                    <span className="text-green-500 text-sm">{Math.round(prediction.co2_saved * 0.7)} kg</span>
                   </div>
                 </div>
               </div>

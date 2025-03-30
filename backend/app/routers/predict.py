@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Request
 from app.models.schemas import PredictionRequest, PredictionResponse
 from app.utils.hf_integration import get_hf_recommendations
 from app.utils.model_loader import predict_waste, map_product_type, generate_recommendations
+from app.utils.ai_recommendations import generate_ai_recommendations
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 import logging
@@ -47,19 +48,29 @@ async def predict_waste_endpoint(prediction_request: PredictionRequest, request:
         # Get food type for recommendations
         food_type = map_product_type(prediction_request.product_type)
         
-        # Generate model-based recommendations
-        model_recommendations = generate_recommendations(food_type, prediction)
+        # Generate AI-powered recommendations using our new module
+        recommendations = await generate_ai_recommendations(
+            food_type=food_type,
+            predicted_waste=prediction,
+            co2_saved=co2_saved,
+            utilization_rate=utilization_rate,
+            input_data=input_data
+        )
         
-        # Get additional recommendations from Hugging Face (if available)
-        hf_recommendations = await get_hf_recommendations(prediction)
-        
-        # Combine recommendations, prioritizing model-based ones
-        recommendations = model_recommendations
-        
-        # Add any unique HF recommendations
-        for rec in hf_recommendations:
-            if rec not in recommendations and len(recommendations) < 6:
-                recommendations.append(rec)
+        # If AI recommendations fail or return fewer than 3 recommendations, 
+        # fall back to model-based recommendations
+        if not recommendations or len(recommendations) < 3:
+            logger.warning("Insufficient AI recommendations. Using model-based recommendations.")
+            model_recommendations = generate_recommendations(food_type, prediction)
+            
+            # Use model recommendations if AI recommendations are empty
+            if not recommendations:
+                recommendations = model_recommendations
+            # Otherwise, add model recommendations to fill gaps
+            else:
+                for rec in model_recommendations:
+                    if rec not in recommendations and len(recommendations) < 6:
+                        recommendations.append(rec)
         
         return PredictionResponse(
             prediction=prediction,
