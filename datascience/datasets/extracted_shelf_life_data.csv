@@ -1,0 +1,662 @@
+ID,Category_ID,Name,DOP_Refrigerate_Min,DOP_Refrigerate_Max,DOP_Freeze_Min,DOP_Freeze_Max,Safe_Minimum_Temperature
+1,7,Butter,1.0,2.0,6.0,9.0,5
+2,7,Buttermilk,1.0,2.0,3.0,3.0,5
+3,7,Cheese,6.0,6.0,6.0,6.0,5
+4,7,Cheese,12.0,12.0,,,5
+5,7,Cheese,1.0,1.0,3.0,4.0,5
+6,7,Cheese,3.0,4.0,,,5
+7,7,Cheese,1.0,2.0,6.0,6.0,5
+8,7,Coffee creamer,3.0,3.0,,,5
+9,7,Cottage cheese,2.0,2.0,,,5
+10,7,Cream cheese,2.0,2.0,,,5
+11,7,Cream,1.0,1.0,,,5
+12,7,Cream,,,,,5
+13,7,Cream,3.0,4.0,4.0,4.0,5
+14,7,Cream,10.0,10.0,3.0,4.0,5
+15,7,Cream,1.0,1.0,3.0,4.0,5
+16,7,Dips,2.0,2.0,,,5
+17,7,Egg substitutes,7.0,7.0,,,5
+20,7,Eggnog,3.0,5.0,6.0,6.0,5
+21,7,Eggs,3.0,5.0,,,5
+22,7,Eggs,,,,,5
+23,7,Eggs,,,,,5
+24,7,Egg dishes,,,,,5
+25,7,Kefir,1.0,1.0,,,5
+26,7,Margarine,6.0,6.0,12.0,12.0,5
+27,7,Milk,,,3.0,3.0,5
+28,7,Pudding,,,,,5
+29,7,Sour cream,,,,,5
+30,7,Whipped cream,3.0,4.0,,,5
+31,7,Whipped topping,3.0,3.0,,,5
+32,7,Whipped topping,2.0,2.0,,,5
+33,7,Yogurt,1.0,2.0,,,5
+34,10,Beef,3.0,5.0,4.0,12.0,5
+35,10,Beef,3.0,5.0,4.0,12.0,5
+36,10,Beef,3.0,5.0,4.0,12.0,5
+37,10,Beef,3.0,5.0,4.0,12.0,5
+38,10,Beef,3.0,5.0,4.0,12.0,5
+39,10,Beef,3.0,5.0,4.0,12.0,5
+40,10,Beef,3.0,5.0,4.0,12.0,5
+41,10,Beef,3.0,5.0,4.0,12.0,5
+42,10,Beef,3.0,5.0,4.0,12.0,5
+43,10,Beef,1.0,2.0,3.0,4.0,5
+44,10,Lamb,3.0,5.0,4.0,12.0,5
+45,10,Lamb,3.0,5.0,4.0,12.0,5
+46,10,Lamb,3.0,5.0,4.0,12.0,5
+47,10,Lamb,3.0,5.0,4.0,12.0,5
+48,10,Lamb,3.0,5.0,4.0,12.0,5
+49,10,Lamb,3.0,5.0,4.0,12.0,5
+50,10,Lamb,1.0,2.0,3.0,4.0,5
+51,10,Lamb,3.0,5.0,4.0,12.0,5
+52,10,Lamb,3.0,5.0,4.0,12.0,5
+53,10,Lamb,3.0,5.0,4.0,12.0,5
+54,10,Lamb,3.0,5.0,4.0,12.0,5
+55,10,Lamb,3.0,5.0,4.0,12.0,5
+56,10,Veal,3.0,5.0,4.0,12.0,5
+57,10,Veal,3.0,5.0,4.0,12.0,5
+58,10,Veal,3.0,5.0,4.0,12.0,5
+59,10,Veal,1.0,2.0,3.0,4.0,5
+60,10,Pork,3.0,5.0,4.0,12.0,5
+61,10,Pork,3.0,5.0,4.0,12.0,5
+63,10,Pork,3.0,5.0,4.0,12.0,5
+64,10,Pork,3.0,5.0,4.0,12.0,5
+65,10,Pork,3.0,5.0,4.0,12.0,5
+66,10,Pork,3.0,5.0,4.0,12.0,5
+67,10,Pork,3.0,5.0,4.0,12.0,5
+69,10,Pork,3.0,5.0,4.0,12.0,5
+70,10,Goat,3.0,5.0,4.0,12.0,5
+71,10,Goat,3.0,5.0,4.0,12.0,5
+72,10,Pork,3.0,5.0,4.0,12.0,5
+73,10,Pork,1.0,2.0,3.0,4.0,5
+74,10,Pork,3.0,5.0,4.0,12.0,5
+75,10,Pork,3.0,5.0,4.0,12.0,5
+76,10,Venison,3.0,5.0,4.0,12.0,5
+77,10,Variety meats,1.0,2.0,3.0,4.0,5
+78,10,Goat,1.0,2.0,3.0,4.0,5
+79,12,Bacon,1.0,1.0,1.0,1.0,5
+81,12,Corned beef,5.0,7.0,1.0,1.0,5
+82,12,Ham,6.0,9.0,,,5
+83,12,Ham,1.0,1.0,1.0,2.0,5
+84,12,Ham,1.0,1.0,1.0,2.0,5
+85,12,Ham,3.0,4.0,1.0,2.0,5
+86,12,Ham,1.0,1.0,1.0,2.0,5
+87,12,Ham,6.0,9.0,1.0,2.0,5
+88,12,Ham,2.0,2.0,1.0,2.0,5
+89,12,Ham,1.0,1.0,1.0,2.0,5
+90,12,Ham,1.0,1.0,1.0,2.0,5
+91,12,Ham,1.0,1.0,1.0,2.0,5
+92,12,Ham,1.0,1.0,1.0,2.0,5
+93,12,Ham,1.0,1.0,1.0,2.0,5
+94,12,Ham,1.0,1.0,1.0,2.0,5
+95,12,Ham,1.0,1.0,1.0,2.0,5
+96,12,Ham,1.0,1.0,1.0,2.0,5
+97,12,Ham,1.0,1.0,1.0,2.0,5
+98,12,Hot dogs,2.0,2.0,1.0,2.0,5
+102,12,Sausage,1.0,2.0,1.0,2.0,5
+103,12,Sausage,1.0,1.0,1.0,2.0,5
+104,12,Sausage,2.0,3.0,1.0,2.0,5
+105,13,"Stuffed, raw pork chops",1.0,2.0,9.0,9.0,5
+106,13,Raw kabobs with vegetables,1.0,2.0,3.0,4.0,5
+107,11,Bacon,,,,,5
+108,11,Ham,,,,,5
+109,11,Jerky,,,,,5
+110,11,Jerky,,,,,5
+111,11,Meat products,,,,,5
+112,11,Retort pouches or boxes,,,,,5
+113,15,Chicken,1.0,2.0,12.0,12.0,5
+114,15,Turkey,1.0,2.0,12.0,12.0,5
+115,15,Ground turkey or chicken,1.0,2.0,3.0,4.0,5
+116,15,Chicken parts,1.0,2.0,9.0,9.0,5
+117,15,Chicken parts,1.0,2.0,9.0,9.0,5
+118,15,Chicken parts,1.0,2.0,9.0,9.0,5
+119,15,Turkey parts,1.0,2.0,9.0,9.0,5
+120,15,Turkey parts,1.0,2.0,9.0,9.0,5
+121,15,Turkey parts,1.0,2.0,9.0,9.0,5
+123,15,Duckling,1.0,2.0,6.0,6.0,5
+125,15,Goose,1.0,2.0,6.0,6.0,5
+126,15,Pheasant,1.0,2.0,6.0,6.0,5
+127,15,Quail,1.0,2.0,6.0,6.0,5
+128,15,Capon,1.0,2.0,12.0,12.0,5
+129,15,Cornish Hens,1.0,2.0,12.0,12.0,5
+130,15,Giblets,1.0,2.0,3.0,4.0,5
+131,17,"Stuffed, raw chicken breasts",,,,,5
+132,17,Raw kabobs with vegetables,,,,,5
+133,17,Turducken,,,9.0,9.0,5
+134,14,"Chicken nuggets, patties",,,1.0,3.0,5
+135,14,Cooked poultry dishes,,,,,5
+136,14,Fried chicken,,,,,5
+140,25,Poultry pieces,,,,,5
+141,14,Rotisserie chicken,3.0,4.0,4.0,4.0,5
+142,16,Canned chicken,,,,,5
+143,16,Retort pouches or boxes,,,,,5
+144,20,Lean fish,1.0,2.0,6.0,8.0,5
+145,20,Lean fish,1.0,2.0,4.0,8.0,5
+146,20,Fatty fish,1.0,2.0,2.0,3.0,5
+147,20,Caviar,1.0,4.0,,,5
+148,20,Cooked fish,,,,,5
+149,20,Surimi seafood,,,9.0,9.0,5
+150,21,Scallops,1.0,3.0,6.0,18.0,5
+151,21,"Shrimp, crayfish",1.0,3.0,6.0,18.0,5
+152,21,Squid,1.0,3.0,6.0,18.0,5
+153,21,"Shucked clams, mussels, and oysters",3.0,10.0,3.0,4.0,5
+154,21,Crab meat,,,,,5
+155,21,Crab meat,10.0,12.0,4.0,10.0,5
+156,21,Crab legs,2.0,4.0,9.0,12.0,5
+157,21,"Live clams, mussels, crab, and oysters",1.0,2.0,2.0,3.0,5
+158,21,Fresh whole lobster,1.0,1.0,,,5
+159,21,Fresh lobster tails,2.0,3.0,2.0,4.0,5
+160,21,"Fresh clams, mussels, oysters",5.0,10.0,,,5
+161,21,Fresh whole lobster,1.0,2.0,2.0,4.0,5
+162,21,Cooked shellfish,,,1.0,3.0,5
+163,22,Herring,4.0,6.0,,,5
+164,22,Fish,14.0,45.0,9.0,12.0,5
+165,22,Fish,14.0,45.0,6.0,12.0,5
+166,22,Fish,14.0,30.0,9.0,12.0,5
+167,22,Fish,21.0,30.0,9.0,12.0,5
+168,24,Tofu,1.0,1.0,5.0,5.0,5
+169,24,Miso,1.0,1.0,,,5
+170,24,Soy flour,6.0,6.0,,,5
+171,24,Textured soy protein,,,,,5
+172,24,Re-hydrated textured soy protein,,,,,5
+173,25,Leftovers,,,,,5
+174,25,Leftovers,,,,,5
+175,25,Leftovers,,,,,5
+176,25,Commercial brand vacuum-packed dinners,2.0,2.0,,,5
+177,25,Cooked pasta,,,,,5
+178,25,Cooked rice,,,,,5
+179,25,"Fruit, cut",,,,,5
+180,25,Guacamole,,,,,5
+181,25,Hummus,3.0,3.0,,,5
+183,25,Hummus,,,,,5
+184,25,Luncheon meat or poultry,3.0,5.0,,,5
+185,25,Main dishes or meals,3.0,4.0,,,5
+186,25,Meats,,,,,5
+187,25,Olives,2.0,2.0,,,5
+188,25,Pate,1.0,2.0,,,5
+192,25,Luncheon meat or poultry,2.0,2.0,1.0,2.0,5
+193,25,"Soup, stews",,,,,5
+194,25,Casseroles,,,,,5
+195,2,Commercial bread products,,,3.0,5.0,5
+196,9,Tortillas,,,6.0,6.0,5
+197,2,Commercial cakes and muffins,,,6.0,6.0,5
+198,2,Cheesecake,,,3.0,6.0,5
+199,2,Cookies,,,8.0,12.0,5
+200,2,Cookies,,,8.0,12.0,5
+201,2,Dairy filled eclairs,,,3.0,3.0,5
+202,2,Doughnuts,,,,,5
+203,2,Fruit cake,,,12.0,12.0,5
+204,2,"Pastries, danish",,,,,5
+205,2,Cream pies,,,,,5
+206,2,Chiffon pies,,,,,5
+207,2,Fruit pies,,,,,5
+208,2,Pies,,,,,5
+209,2,Pies,,,,,5
+210,2,Pies,,,,,5
+211,2,Quiche,,,,,5
+212,3,Baking powder,,,,,5
+213,3,Baking soda,,,,,5
+214,3,Biscuit or pancake mix,,,,,5
+215,3,"Cake, brownie, bread mixes",,,,,5
+216,3,Chocolate,,,,,5
+217,3,Cocoa and cocoa mixes,,,,,5
+218,3,Cornmeal,,,,,5
+219,3,Cornmeal,,,,,5
+220,3,Cornstarch,,,,,5
+222,3,Flour,,,,,5
+223,3,Flour,,,,,5
+224,3,Frosting or icing,,,,,5
+225,3,Gelatin,,,,,5
+226,3,Gelatin,,,,,5
+227,3,Oils,,,,,5
+228,3,Nut oils,,,,,5
+229,3,Vegetable oil sprays,,,,,5
+230,3,Shortening,,,,,5
+231,3,Tamarind paste,,,,,5
+232,3,Chili powder,,,,,5
+233,3,Seasoning blends,,,,,5
+234,3,Flavored or herb mixes,,,,,5
+235,3,Garlic,,,,,5
+236,3,Herbs,,,,,5
+237,3,Spice/spices,,,,,5
+238,3,Spice/spices,,,,,5
+239,3,Sugar,,,,,5
+240,3,Sugar,,,,,5
+241,3,Sugar,,,,,5
+242,3,Sugar substitutes,,,,,5
+243,3,Tapiocas,,,,,5
+245,4,Tube cans,,,,,5
+246,4,Ready-to-bake pie crust,,,2.0,2.0,5
+247,4,Cookie dough,,,2.0,2.0,5
+248,18,Apples,4.0,6.0,,,5
+249,18,Apricots,,,,,5
+250,18,Avocados,,,,,5
+251,18,Bananas,,,,,5
+252,18,Berries,7.0,7.0,,,5
+253,18,Berries,3.0,6.0,,,5
+254,18,Blueberries,1.0,2.0,,,5
+255,18,Cherimoya,,,,,5
+256,18,Citrus fruit,10.0,21.0,,,5
+257,18,Coconut,,,,,5
+258,18,Coconuts,2.0,3.0,,,5
+259,18,Cranberries,2.0,2.0,,,5
+260,18,Dates,12.0,12.0,,,5
+261,18,Grapes,1.0,1.0,,,5
+262,18,Guava,,,,,5
+263,18,Kiwi fruit,,,,,5
+264,18,Melons,2.0,2.0,,,5
+265,18,"Papaya, mango, feijoa, passionfruit, casaha melon",1.0,1.0,,,5
+266,18,"Peaches, nectarines, plums, pears, sapote",,,,,5
+267,18,Pineapple,,,,,5
+268,18,Plantains,,,,,5
+269,18,Pomegranate,1.0,3.0,,,5
+270,19,"Artichokes, whole",1.0,2.0,,,5
+271,19,Asparagus,3.0,4.0,5.0,5.0,5
+272,19,Bamboo shoots,2.0,2.0,,,5
+273,19,Beans and peas,3.0,5.0,8.0,8.0,5
+274,19,Beets,1.0,2.0,6.0,8.0,5
+275,19,Bok choy,2.0,3.0,10.0,12.0,5
+276,19,Broccoli and broccoli raab (rapini),3.0,5.0,10.0,12.0,5
+277,19,Brussels sprouts,3.0,5.0,10.0,12.0,5
+278,19,Cabbage,1.0,2.0,10.0,12.0,5
+279,19,"Carrots, parsnips",2.0,3.0,10.0,12.0,5
+280,19,Cauliflower,3.0,5.0,10.0,12.0,5
+281,19,Celery,1.0,2.0,10.0,12.0,5
+282,19,Corn on the cob,1.0,2.0,8.0,8.0,5
+283,19,Cucumbers,4.0,6.0,,,5
+284,19,Eggplant,4.0,7.0,6.0,8.0,5
+285,19,Garlic,3.0,14.0,1.0,1.0,5
+286,19,Ginger root,2.0,3.0,6.0,6.0,5
+287,19,Greens,1.0,4.0,10.0,12.0,5
+288,19,Herbs,7.0,10.0,1.0,2.0,5
+289,19,Leeks,1.0,2.0,10.0,12.0,5
+290,19,Lettuce,1.0,2.0,,,5
+291,19,Lettuce,3.0,7.0,,,5
+292,19,Mushrooms,3.0,7.0,10.0,12.0,5
+293,19,Okra,2.0,3.0,10.0,12.0,5
+294,19,Onions,2.0,2.0,10.0,12.0,5
+295,19,Onions,1.0,1.0,10.0,12.0,5
+296,19,Peppers,4.0,14.0,6.0,8.0,5
+297,19,Potatoes,1.0,2.0,,,5
+298,19,Pumpkins,3.0,5.0,,,5
+299,19,Radishes,10.0,14.0,,,5
+300,19,Rhubarb,3.0,7.0,,,5
+301,19,Rutabagas,2.0,3.0,8.0,10.0,5
+302,19,Squash,4.0,5.0,10.0,12.0,5
+303,19,Squash,1.0,3.0,10.0,12.0,5
+304,19,Tamarind,6.0,6.0,,,5
+305,19,Taro,2.0,3.0,,,5
+306,19,Tomatoes,,,2.0,2.0,5
+307,19,Turnips,2.0,2.0,8.0,10.0,5
+308,19,Yuca/cassava,3.0,3.0,1.0,2.0,5
+309,8,Dough,,,12.0,12.0,5
+310,8,Egg substitutes,,,12.0,12.0,5
+311,8,Fish,,,18.0,18.0,5
+312,8,Fish,,,6.0,6.0,5
+313,8,Frozen potato products,,,12.0,12.0,5
+314,8,Frozen pretzels,,,9.0,9.0,5
+315,8,Fruits,,,10.0,18.0,5
+317,8,Ice cream,,,6.0,6.0,5
+318,8,Ice pops,,,9.0,9.0,5
+319,8,Juice concentrates,,,2.0,2.0,5
+320,8,Lobster tails,,,8.0,8.0,5
+321,8,"Pancakes, waffles",,,3.0,3.0,5
+322,8,Sausages,,,1.0,2.0,5
+323,8,Sausages,,,1.0,2.0,5
+324,8,"Sherbet, sorbet",,,9.0,9.0,5
+325,8,"Shrimp, shellfish",,,12.0,18.0,5
+326,8,Soy crumbles and hot dogs,,,1.0,2.0,5
+327,8,Soy meat substitutes,,,12.0,18.0,5
+328,8,Tempeh,,,6.0,6.0,5
+330,8,Frozen entrees,,,12.0,12.0,5
+331,8,Vegetables,,,10.0,18.0,5
+332,9,Fresh pasta,,,,,5
+333,9,Beans,,,,,5
+334,9,Lentils,,,,,5
+335,9,Pasta,,,,,5
+336,9,Dry egg noodles,,,,,5
+337,9,Peas,,,,,5
+338,9,Rice,,,,,5
+339,9,Rice,,,,,5
+340,6,Barbecue sauce,,,,,5
+341,6,Chutney,,,,,5
+342,6,"Cream sauces, milk solids",,,,,5
+343,6,Dry gravy mixes,,,,,5
+344,6,Gravy,,,,,5
+345,6,Honey,,,,,5
+346,6,Horseradish,12.0,12.0,,,5
+347,6,"Jams, jellies, and preserves",,,,,5
+348,6,"Ketchup, cocktail, or chili sauce",,,,,5
+349,6,Marinades,,,,,5
+350,6,Mayonnaise,,,,,5
+351,6,Mustard,,,,,5
+352,6,Olives,,,,,5
+353,6,Pickles,,,,,5
+354,6,Pesto,6.0,6.0,,,5
+356,6,Salad dressings,,,,,5
+357,6,Salsa,,,,,5
+358,6,Sauce mixes,,,,,5
+359,6,Spaghetti sauce,,,,,5
+360,6,Soy sauce or teriyaki sauce,,,,,5
+361,6,Vinegar,,,,,5
+362,6,Worcestershire sauce,,,,,5
+363,1,Jars or pouches,,,,,5
+364,1,Fruit,,,,,5
+365,1,Vegetables,,,,,5
+366,1,Dinners,,,,,5
+367,1,"Cereal, dry mixes",,,,,5
+368,1,Formula,,,,,5
+369,1,Liquid concentrate or ready-to-feed formula,,,,,5
+370,23,Applesauce,,,,,5
+371,23,Bacon bits,,,,,5
+372,23,Canned goods,,,,,5
+373,23,Canned goods,,,,,5
+374,23,Cereal,,,,,5
+375,23,Cereal,,,,,5
+376,23,Chocolate syrup,,,,,5
+377,23,Crackers,,,,,5
+378,23,Graham cracker/animal cracker,,,,,5
+379,23,"Fruits, dried",,,,,5
+380,23,Gummy (fruit) snacks,,,,,5
+381,23,Marshmallows,,,,,5
+382,23,Marshmallow crème,,,,,5
+383,23,Milk,,,,,5
+384,23,Molasses,,,,,5
+385,23,Mushrooms,,,,,5
+386,23,Nuts,,,,,5
+387,23,Peanut butter,,,,,5
+388,23,Pectin,,,,,5
+389,23,Popcorn,,,,,5
+390,23,Popcorn,,,,,5
+391,23,Popcorn,,,,,5
+392,23,Potato chips,,,,,5
+393,23,Potatoes,,,,,5
+394,23,Pretzels,,,,,5
+395,23,Pudding mixes,,,,,5
+396,23,Soup mixes,,,,,5
+397,23,Sun dried tomatoes,,,,,5
+398,23,Syrup,,,,,5
+399,23,Toaster pastries,,,,,5
+400,5,Coffee,,,,,5
+401,5,Coffee,,,,,5
+402,5,Coffee,,,,,5
+403,5,Diet powder mixes and drink mixes,,,,,5
+404,5,"Fruit Juice in cartons, fruit drinks, punch",,,,,5
+405,5,"Juice, boxes",,,,,5
+406,5,Nectar,,,,,5
+407,5,Soda,,,,,5
+408,5,Soy or rice beverage,,,,,5
+410,5,Tea,,,,,5
+411,5,Tea,,,,,5
+412,5,Tea,,,,,5
+413,5,Water,,,,,5
+414,18,Kumquats,,,,,5
+415,19,Bagged greens,,,,,5
+416,6,Tahini,,,,,5
+190,25,Egg salad,,,,,5
+191,25,Potato salad,,,,,5
+417,25,Seafood salads,,,,,5
+418,25,Chicken salad,,,,,5
+419,25,Ham salad,,,,,5
+420,25,Pasta salad,,,,,5
+421,7,Soy milk,,,,,5
+422,19,Yams/sweet potatoes,,,,,5
+423,19,Kale,3.0,5.0,8.0,12.0,5
+425,9,Quinoa,,,,,5
+426,9,Quinoa,,,,,5
+427,7,Almond milk,,,,,5
+428,7,Rice milk,,,,,5
+429,7,Coconut milk,,,,,5
+430,7,Coffee creamer,,,,,5
+431,14,Turkey bacon,2.0,2.0,2.0,4.0,5
+432,23,Fruit cocktail,,,,,5
+433,6,Black bean sauce,,,,,5
+434,6,Oyster sauce,,,,,5
+435,6,Hoisin sauce,,,,,5
+436,12,Pork roll,,,,,5
+437,23,Almonds ,16.0,16.0,20.0,20.0,5
+438,23,Almonds ,8.0,8.0,10.0,10.0,5
+439,23,Cashews,6.0,6.0,12.0,12.0,5
+440,23,Macadamias,12.0,12.0,24.0,24.0,5
+441,23,Peanuts,12.0,12.0,24.0,24.0,5
+442,23,Peanuts,12.0,12.0,24.0,24.0,5
+443,23,Pecans,12.0,12.0,24.0,24.0,5
+444,23,Pecans,9.0,9.0,24.0,24.0,5
+445,23,Pistachios,12.0,12.0,24.0,24.0,5
+446,23,Walnuts,9.0,12.0,24.0,24.0,5
+447,5,Lime juice,,,,,5
+448,5,Lemon juice,,,,,5
+449,2,Bagel,,,,,5
+450,2,Bagel ,,,,,5
+451,2,Muffin,,,,,5
+452,2,Muffin,,,,,5
+453,2,Muffin,,,,,5
+454,23,Coconut oil,,,,,5
+455,5,Orange juice,,,8.0,12.0,5
+456,5,Orange juice,,,12.0,12.0,5
+457,5,Orange juice,,,,,5
+458,23,Roasted red peppers,,,,,5
+459,3,Whole wheat flour,,,,,5
+460,9,Whole wheat bread,,,,,5
+461,9,Whole wheat bread,,,,,5
+462,5,Red wine,,,,,5
+463,5,White wine,,,,,5
+464,23,Dry stuffing mix,,,,,5
+465,7,Powdered milk,,,,,5
+466,23,Almond butter,,,,,5
+467,23,Cashew butter,,,,,5
+468,23,Salt,,,,,5
+469,23,Black pepper,,,,,5
+470,23,Black pepper,,,,,5
+471,23,Cajun seasoning blend ,,,,,5
+472,23,Cinnamon,,,,,5
+473,23,Cumin,,,,,5
+474,23,Garlic powder,,,,,5
+475,23,Onion powder ,,,,,5
+476,23,Nutmeg,,,,,5
+477,7,Nacho cheese ,,,3.0,3.0,5
+478,18,Star fruit,1.0,2.0,,,5
+479,18,Prickly pear ,1.0,2.0,,,5
+480,18,Pitaya/dragon fruit,2.0,3.0,,,5
+481,18,Strawberries,2.0,3.0,,,5
+482,18,Raspberries,2.0,3.0,,,5
+483,18,Cherries,2.0,3.0,,,5
+484,6,Broth,,,,,5
+485,6,Beef broth/stock/consommé ,,,,,5
+486,6,Chicken broth/stock/consommé ,,,,,5
+487,6,Vegetable stock/broth ,,,,,5
+488,23,Peanut butter,12.0,12.0,,,5
+489,23,Peanut butter,12.0,12.0,,,5
+490,7,Ricotta,2.0,2.0,,,5
+491,19,Baby carrots,4.0,4.0,,,5
+492,19,Jicama,2.0,3.0,,,5
+493,19,Kimchi,6.0,12.0,,,5
+494,19,Kohlrabi,1.0,1.0,,,5
+495,18,Watermelon,3.0,4.0,,,5
+496,18,Cantaloupe,5.0,15.0,,,5
+497,18,Honeydew,3.0,4.0,,,5
+498,9,Peanuts ,,,,,5
+499,9,Refried beans,,,,,5
+500,6,Relish,9.0,9.0,,,5
+501,23,Tomato paste,,,,,5
+502,23,Tapenade,9.0,9.0,,,5
+503,23,Flaxseed,,,,,5
+504,23,Flaxseed,12.0,12.0,,,5
+505,19,Lemongrass,7.0,9.0,6.0,6.0,5
+506,19,Cilantro,,,,,5
+507,19,Mint,,,,,5
+508,19,Basil,,,,,5
+509,19,Basil,,,,,5
+510,19,Oregano,,,,,5
+511,19,Rosemary,,,,,5
+512,19,Chives,,,,,5
+513,19,Thyme,,,,,5
+514,25,Turkey ,2.0,2.0,1.0,2.0,5
+515,25,Ham,2.0,2.0,1.0,2.0,5
+516,25,Salami ,2.0,2.0,1.0,2.0,5
+517,25,Chicken,2.0,2.0,1.0,2.0,5
+518,25,Canadian bacon,,,,,5
+519,25,Canadian bacon,80.0,80.0,,,5
+520,23,Canola oil,,,,,5
+521,23,Almond oil,2.0,2.0,,,5
+522,23,Sunflower oil,,,,,5
+523,23,Grapeseed oil,,,,,5
+524,6,Duck fat,,,,,5
+525,6,Bacon grease,,,,,5
+526,6,Frying oil,,,,,5
+527,3,Almond extract,,,,,5
+528,3,Cinnamon extract,,,,,5
+529,3,Lemon extract,,,,,5
+530,3,Pure vanilla extract,,,,,5
+531,3,Butter flavor,,,,,5
+532,3,Coconut flavor,,,,,5
+533,23,"""Genuine"" Maple syrup",,,,,5
+534,23,"""Genuine"" Maple syrup",,,,,5
+536,5,Lemon juice,,,,,5
+537,5,Apple juice,,,,,5
+538,5,Carrot juice,,,,,5
+539,5,Hard liquors,,,,,5
+540,5,Cream liquors,,,,,5
+541,5,Coffee,,,,,5
+542,2,Macaroons,,,,,5
+543,7,Milk,,,,,5
+544,7,String Cheese,5.0,5.0,,,5
+545,7,Vegan Cheddar Cheese,4.0,4.0,,,5
+546,7,Quark,,,,,5
+547,19,Zucchini,,,,,5
+548,19,Hot peppers,1.0,1.0,,,5
+549,19,Bean sprouts,5.0,10.0,,,5
+550,19,Swiss chard,1.0,2.0,,,5
+551,4,Puff pastry,,,,,5
+552,4,Biscuits,,,,,5
+553,9,Tortillas,60.0,90.0,,,5
+554,4,Pie crust,,,,,5
+555,23,Granola,,,,,5
+556,23,Pork rinds,,,,,5
+557,6,Apple cider vinegar,,,,,5
+558,5,Nutrition supplement drinks,,,,,5
+559,6,Hot sauce,,,,,5
+560,6,Thai red curry paste,,,,,5
+561,3,Yeast,,,,,5
+562,18,Applesauce,,,,,5
+563,12,Pate,,,,,5
+564,14,Pate,,,,,5
+565,6,Cranberry sauce,,,,,5
+566,6,Cranberry sauce,,,,,5
+567,5,Vegetable juice,,,,,5
+568,5,Vegetable juice,,,,,5
+569,5,Vegetable juice,,,,,5
+570,19,Marinated vegetables,,,,,5
+571,8,Pizza,,,,,5
+572,25,Salsa,,,,,5
+573,23,Chia seeds,,,,,5
+574,2,Bread,,,,,5
+575,9,Amaranth,,,,,5
+576,3,Amaranth,,,,,5
+577,9,Barley,,,,,5
+578,3,Barley,,,,,5
+579,9,Buckwheat,,,,,5
+580,3,Buckwheat,,,,,5
+581,9,Farro,,,,,5
+582,3,Farro,,,,,5
+583,9,Millet,,,,,5
+584,3,Millet,,,,,5
+585,9,Oats,,,,,5
+586,3,Oats,,,,,5
+587,9,Rye,,,,,5
+588,3,Rye,,,,,5
+589,9,Sorghum,,,,,5
+590,3,Sorghum,,,,,5
+591,9,Spelt,,,,,5
+592,3,Spelt,,,,,5
+593,9,Teff,,,,,5
+594,3,Teff,,,,,5
+595,10,Rabbit,,,,,5
+596,19,Spaghetti squash,,,,,5
+597,19,Spaghetti squash,,,,,5
+598,3,Garam masala,,,,,5
+599,6,Tomato sauce,,,,,5
+600,19,Cherry tomatoes,,,,,5
+601,23,Coconut cream,,,,,5
+602,23,Coconut milk,,,,,5
+603,25,Coleslaw,,,,,5
+604,23,Pumpkin seeds,,,,,5
+605,23,Pumpkin seeds,,,,,5
+606,23,Pumpkin seeds,,,,,5
+607,23,Pumpkin seeds,,,,,5
+608,23,Sunflower seeds,,,,,5
+609,23,Sunflower seeds,,,,,5
+610,23,Sunflower seeds,,,,,5
+611,19,Parsley,,,,,5
+612,23,Sesame oil,,,,,5
+613,23,Sesame seeds,,,,,5
+614,23,Capers,,,,,5
+615,23,Chocolate hazlenut spread,,,,,5
+616,23,"Roasted nuts (peanuts, cashews, almonds)",,,,,5
+617,23,Tuna,,,,,5
+618,23,Tuna,,,,,5
+619,23,Seafood,,,,,5
+620,7,Pimento cheese,,,,,5
+621,10,Bison,,,,,5
+622,10,Bison,,,,,5
+623,6,Salad dressing,,,,,5
+624,6,Salad dressing,,,,,5
+625,6,Salad dressing,,,,,5
+626,6,Salad dressing,,,,,5
+627,23,Grits,,,,,5
+628,7,Cheese Curds,,,,,5
+629,25,Vegetable soup,,,,,5
+630,10,Chorizo,,,,,5
+631,12,Chorizo,,,,,5
+632,12,Chorizo,,,,,5
+633,23,Beets,,,,,5
+634,4,Cinnamon rolls,,,,,5
+635,3,Cinnamon rolls,,,,,5
+636,6,Cooking wine,,,,,5
+637,9,Bulgur,,,,,5
+638,10,Bratwurst,,,,,5
+639,12,Bratwurst,,,,,5
+640,19,Edamame,,,,,5
+641,8,Edamame,,,2.0,2.0,5
+642,23,Edamame,,,,,5
+643,23,Breadcrumbs,,,,,5
+644,23,Milk ,,,,,5
+645,25,Salsa,,,,,5
+646,6,Salsa,,,,,5
+647,6,Tomato Sauce,,,,,5
+648,6,Barbecue Sauce,,,,,5
+649,7,Ghee,,,,,5
+650,23,Corn syrup,,,,,5
+651,23,Nutrition supplement drinks,,,,,5
+652,23,Instant breakfast drinks,,,,,5
+653,23,Pine nuts,,,,,5
+654,3,Coconut flour,,,,,5
+655,23,Pecans,,,,,5
+656,23,Polenta,,,,,5
+657,8,Polenta,,,,,5
+658,23,Cereal or granola bars,,,,,5
+659,23,Milk ,,,,,5
+660,5,Coconut water,,,,,5
+661,19,Celery root,,,,,5
+662,5,Apple cider,,,,,5
+663,5,Yuzu juice,9.0,12.0,,,5
+664,5,Yuzu,,,,,5
+665,12,Pastrami,,,,,5
+666,8,Kugel,,,,,5
+667,25,Kugel,,,,,5
+668,23,Avocado Oil,,,,,5
+669,6,Balsamic vinegar,,,,,5
+670,6,Aioli,,,,,5
+671,6,Salad dressing,,,,,5
+672,23,Base,,,,,5
+673,6,Anchovies,,,,,5
+674,19,Radicchio,,,,,5
+675,12,Prosciutto,,,,,5
+676,12,Ham ,,,,,5
+677,10,Ham ,,,,,5
+678,19,Arugula,,,,,5
+679,9,Mung bean,,,,,5
+680,9,Mung bean,,,,,5
+681,9,Mung bean,,,,,5
+682,23,Croutons,,,,,5
+683,12,Bacon,,,,,5
+684,23,Mustard,,,,,5

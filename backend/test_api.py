@@ -22,10 +22,13 @@ def test_health_check():
 def test_predict_endpoint():
     """Test the prediction endpoint with valid data"""
     test_data = {
-        "food_type": "apple",
-        "quantity": 1.5,
-        "days_until_expiry": 7,
-        "storage_condition": "refrigerated"
+        "temperature": 25,
+        "humidity": 60,
+        "product_type": "dairy",
+        "historical_sales": 1000,
+        "number_of_guests": 300,
+        "quantity_of_food": 400,
+        "storage_conditions": "Refrigerated"
     }
     
     response = client.post("/api/v1/predict", json=test_data)
@@ -33,16 +36,18 @@ def test_predict_endpoint():
     
     # Check response structure
     data = response.json()
-    assert "waste_probability" in data
-    assert "recommended_actions" in data
-    assert isinstance(data["waste_probability"], float)
-    assert isinstance(data["recommended_actions"], list)
+    assert "prediction" in data
+    assert "recommendations" in data
+    assert "co2_saved" in data
+    assert "food_type" in data
+    assert isinstance(data["prediction"], float)
+    assert isinstance(data["recommendations"], list)
     
 def test_predict_endpoint_invalid_data():
     """Test the prediction endpoint with invalid data"""
     # Missing required fields
     test_data = {
-        "food_type": "apple"
+        "product_type": "dairy"
     }
     
     response = client.post("/api/v1/predict", json=test_data)
